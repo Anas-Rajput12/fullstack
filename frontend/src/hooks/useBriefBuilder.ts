@@ -61,7 +61,8 @@ export function useBriefBuilder(): UseBriefBuilderResult {
 
       // Use fetch for SSE streaming (axios doesn't support streams well)
       const token = localStorage.getItem('access_token');
-      const response = await fetch(`${import.meta.env.VITE_API_URL || 'http://localhost:3002/api/v1'}/briefs/generate`, {
+      const API_URL = (import.meta as any).env.VITE_API_URL || 'http://localhost:3002/api/v1';
+      const response = await fetch(`${API_URL}/briefs/generate`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
