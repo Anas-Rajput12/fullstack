@@ -1,0 +1,110 @@
+/* Dark mode specific overrides */
+
+/* Force dark mode for certain elements */
+.dark {
+  /* Smooth color transitions */
+  * {
+    @apply transition-colors duration-200;
+  }
+
+  /* Card hover states */
+  .card:hover {
+    @apply shadow-md;
+  }
+
+  /* Table row hover */
+  tbody tr:hover {
+    @apply bg-gray-900;
+  }
+}
+
+/* Light mode specific overrides */
+:not(.dark) {
+  /* Card hover states */
+  .card:hover {
+    @apply shadow-md;
+  }
+
+  /* Table row hover */
+  tbody tr:hover {
+    @apply bg-gray-50;
+  }
+}
+
+/* Responsive utilities */
+@media (max-width: 768px) {
+  /* Hide sidebar by default on mobile */
+  aside {
+    @apply w-0;
+  }
+
+  /* Stack grid items */
+  .grid {
+    @apply grid-cols-1;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* 2-column grid on tablets */
+  .grid {
+    @apply grid-cols-2;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* 4-column grid on desktop */
+  .grid {
+    @apply grid-cols-4;
+  }
+}
+
+/* Print styles */
+@media print {
+  /* Hide non-essential elements */
+  aside,
+  header,
+  button {
+    display: none !important;
+  }
+
+  /* White background for printing */
+  body {
+    background: white !important;
+    color: black !important;
+  }
+
+  .dark body {
+    background: white !important;
+    color: black !important;
+  }
+}
+
+/* Accessibility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Focus visible for keyboard navigation */
+*:focus-visible {
+  @apply outline-none ring-2 ring-blue-500 ring-offset-2 dark:ring-offset-gray-900;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
