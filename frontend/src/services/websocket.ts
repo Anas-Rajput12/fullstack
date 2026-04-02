@@ -1,6 +1,6 @@
 import { io, Socket } from 'socket.io-client';
 
-const WS_URL = (import.meta as any).env.VITE_WS_URL || 'ws://localhost:3001';
+const WS_URL = (import.meta as any).env.VITE_WS_URL || 'https://fullstack-uwnd.vercel.app';
 
 class WebSocketService {
   private socket: Socket | null = null;
