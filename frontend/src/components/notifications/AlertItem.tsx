@@ -6,8 +6,8 @@ export interface Alert {
   campaign_id: string;
   campaign_name?: string;
   type: 'ctr_threshold' | 'budget_threshold' | 'performance_drop';
-  threshold_value: number;
-  current_value: number;
+  threshold_value: number | string;
+  current_value: number | string;
   message: string;
   is_read: boolean;
   created_at: string;
