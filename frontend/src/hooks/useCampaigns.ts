@@ -4,7 +4,7 @@ import { api } from '../services/api';
 export interface Campaign {
   id: string;
   name: string;
-  status: 'draft' | 'active' | 'paused' | 'completed' | string;
+  status: 'draft' | 'active' | 'paused' | 'completed';
   budget: number;
   spent: number;
   impressions: number;
