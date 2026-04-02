@@ -104,7 +104,7 @@ const LoginPage: React.FC = () => {
         </form>
 
         {/* Demo Credentials */}
-        <div className="mt-6 p-4 bg-gray-50 dark:bg-gray-900 rounded-lg">
+        {/* <div className="mt-6 p-4 bg-gray-50 dark:bg-gray-900 rounded-lg">
           <p className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
             Demo Credentials:
           </p>
@@ -113,7 +113,7 @@ const LoginPage: React.FC = () => {
             <br />
             Password: Admin123!
           </code>
-        </div>
+        </div> */}
       </div>
     </div>
   );
