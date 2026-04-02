@@ -350,7 +350,7 @@ const BriefPreview: React.FC<BriefPreviewProps> = ({
           {tabs.map((tab) => (
             <button
               key={tab.id}
-              onClick={() => setActiveTab(tab.id)}
+              onClick={() => setActiveTab(tab.id as 'copy' | 'social' | 'hashtags')}
               className={`py-3 px-2 border-b-2 font-medium text-sm transition-colors ${
                 activeTab === tab.id
                   ? 'border-blue-600 text-blue-600 dark:text-blue-400'
