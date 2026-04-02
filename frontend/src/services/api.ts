@@ -1,6 +1,6 @@
 import axios, { AxiosInstance, AxiosError, InternalAxiosRequestConfig } from 'axios';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001/api/v1';
+const API_URL = (import.meta as any).env.VITE_API_URL || 'http://localhost:3001/api/v1';
 
 console.log('[API] Initializing with baseURL:', API_URL);
 
